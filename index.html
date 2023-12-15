@@ -27,12 +27,13 @@
       <div>
         <p class="breadcrumb"></p>
         <h1>SAIT CourSearch</h1>
-        <form action="" method="post">
-          <input class=".searchBar" type="search" placeholder="Type Here" />
-          <input type="submit" value="Search" />
+        <form method="post" onsubmit="return false">
+          <input type="text" class="searchbar" />
+          <input type="submit" class="input-submit" onclick="search()" />
         </form>
         <input type="button" onclick="navigation()" />
       </div>
+      <div class="search-output"></div>
     </main>
     <footer>
       <p>Made by SAIT CourSearch Group</p>

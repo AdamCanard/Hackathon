@@ -3,7 +3,7 @@ const searchSubmit = document.querySelector(".input-submit");
 const semesterBox = document.querySelector(".semesterBox");
 const api = null; // root link for API calls
 const breadcrumb = document.querySelector(".breadcrumb");
-const nav = document.getElementById("n");
+const nav = document.querySelector('nav');
 const searchOutput = document.querySelector(".search-output");
 
 // contains all extracted courses from every program
@@ -38,7 +38,7 @@ searchBar.addEventListener("input", search);
 fetchProgramJson();
 
 function search() {
-  //console.log(extractedCourses);
+  console.log('test');
   // Takes user input, searches through course list parsed through json for each character entered
   // Search bar appears on every page. Search function will be called by eventlistener listening for characters entered in input
   // displays search results as list of links popped up below the search bar
