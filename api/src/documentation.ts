@@ -25,19 +25,34 @@
  *         content:
  *           application/json:
  *             schema:
- *               type: "object"
+ *               type: object
  *               properties:
  *                 status:
  *                   type: integer
  *                 message:
  *                   type: string
  *                 data:
- *                   type: "object"
+ *                   type: object
  *                   properties:
  *                     courses:
  *                       type: array
  *                       items:
- *                         type: string
+ *                         type: object
+ *                         properties:
+ *                           name:
+ *                             type: string
+ *                           code:
+ *                             type: string
+ *                           description:
+ *                             type: string
+ *                           year:
+ *                             type: integer
+ *                           semester:
+ *                             type: integer
+ *                           credits:
+ *                             type: integer
+ *                           programName:
+ *                             type: string
  * /courses/find:
  *   get:
  *     tags:
@@ -55,14 +70,14 @@
  *         content:
  *           application/json:
  *             schema:
- *               type: "object"
+ *               type: object
  *               properties:
  *                 status:
  *                   type: integer
  *                 message:
  *                   type: string
  *                 data:
- *                   type: "object"
+ *                   type: object
  *                   properties:
  *                     code:
  *                       type: string
@@ -122,14 +137,14 @@
  *         content:
  *           application/json:
  *             schema:
- *               type: "object"
+ *               type: object
  *               properties:
  *                 status:
  *                   type: integer
  *                 message:
  *                   type: string
  *                 data:
- *                   type: "object"
+ *                   type: object
  *                   properties: {}
  * /courses/addResource:
  *   post:
@@ -155,14 +170,14 @@
  *         content:
  *           application/json:
  *             schema:
- *               type: "object"
+ *               type: object
  *               properties:
  *                 status:
  *                   type: integer
  *                 message:
  *                   type: string
  *                 data:
- *                   type: "object"
+ *                   type: object
  *                   properties: {}
  * /courses/remove:
  *   delete:
@@ -185,14 +200,14 @@
  *         content:
  *           application/json:
  *             schema:
- *               type: "object"
+ *               type: object
  *               properties:
  *                 status:
  *                   type: integer
  *                 message:
  *                   type: string
  *                 data:
- *                   type: "object"
+ *                   type: object
  *                   properties: {}
  * /courses/removeResources:
  *   delete:
@@ -215,14 +230,14 @@
  *         content:
  *           application/json:
  *             schema:
- *               type: "object"
+ *               type: object
  *               properties:
  *                 status:
  *                   type: integer
  *                 message:
  *                   type: string
  *                 data:
- *                   type: "object"
+ *                   type: object
  *                   properties: {}
  *
  */
@@ -259,14 +274,14 @@
  *         content:
  *           application/json:
  *             schema:
- *               type: "object"
+ *               type: object
  *               properties:
  *                 status:
  *                   type: integer
  *                 message:
  *                   type: string
  *                 data:
- *                   type: "object"
+ *                   type: object
  *                   properties:
  *                     courses:
  *                       type: array
@@ -324,14 +339,14 @@
  *         content:
  *           application/json:
  *             schema:
- *               type: "object"
+ *               type: object
  *               properties:
  *                 status:
  *                   type: integer
  *                 message:
  *                   type: string
  *                 data:
- *                   type: "object"
+ *                   type: object
  *                   properties:
  *                     allPrograms:
  *                       type: array
@@ -354,14 +369,14 @@
  *         content:
  *           application/json:
  *             schema:
- *               type: "object"
+ *               type: object
  *               properties:
  *                 status:
  *                   type: integer
  *                 message:
  *                   type: string
  *                 data:
- *                   type: "object"
+ *                   type: object
  *                   properties:
  *                     name:
  *                       type: string
@@ -423,14 +438,14 @@
  *         content:
  *           application/json:
  *             schema:
- *               type: "object"
+ *               type: object
  *               properties:
  *                 status:
  *                   type: integer
  *                 message:
  *                   type: string
  *                 data:
- *                   type: "object"
+ *                   type: object
  *                   properties: {}
  *
  * /programs/remove:
@@ -452,13 +467,13 @@
  *         content:
  *           application/json:
  *             schema:
- *               type: "object"
+ *               type: object
  *               properties:
  *                 status:
  *                   type: integer
  *                 message:
  *                   type: string
  *                 data:
- *                   type: "object"
+ *                   type: object
  *                   properties: {}
  */

@@ -4,12 +4,20 @@ import {prisma} from '../prisma/client';
 export async function findAll(req: Request, res: Response) {
   console.log(`Invoked (${req.originalUrl}): fetching all courses`);
 
-  const allCourses = await prisma.course.findMany({select: {name: true}});
-  const courses: string[] = [];
-  allCourses.forEach(course => courses.push(course.name));
+  const courses = await prisma.course.findMany({
+    select: {
+      name: true,
+      code: true,
+      description: true,
+      year: true,
+      semester: true,
+      credits: true,
+      programName: true,
+    },
+  });
 
   return res.status(200).json({
-    message: `Showing all ${allCourses.length} courses`,
+    message: `Showing all ${courses.length} courses`,
     status: 200,
     data: {
       courses,
