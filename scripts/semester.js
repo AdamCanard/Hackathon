@@ -1,26 +1,24 @@
-const semesterList = document.querySelector('.semester-list');
-const semesterBox = document.querySelector('.semester-box');
-const semesters = document.querySelector('.semesters');
-let extractedCourses = []
+const semesterList = document.querySelector(".semester-list");
+const semesterBox = document.querySelector(".semester-box");
+const semesters = document.querySelector(".semesters");
+let extractedCourses = [];
 let numberOfSemesters = 0;
+let courseClicked;
+let APIres;
+
+softwareDev = {
+  "Software Development": {
+    Semester1: ["CPRG213", "CPRG216", "CPNT217", "COMM238", "MATH237"],
+    Semester2: ["CPRG211", "CPRG250", "CPSY200", "CPSY202", "PHIL241"],
+    Semester3: ["CPRG303", "CPRG304", "CPRG306", "CPRG307", "CPSY301"],
+    Semester4: ["CPRG305", "CPSY300", "INTP302", "ITSC320", "PROJ309"],
+  },
+};
 
 populateSemBoxes();
 
-function fetchProgramJson() {
-  fetch("/scripts/software_development.json")
-  //fetch("http://server.jgaribsin.com:3000/courses/find", {
-  //method:'GET',
-  //credentials:'same-origin'})
-    .then((res) => {
-      return res.json();
-    })
-    .then((data) => {
-      //console.log(data);
-      assignProgramData(data);
-    });
-}
-
 function assignProgramData(data) {
+  console.log(data);
   for (let program in data) {
     if (data.hasOwnProperty(program)) {
       //console.log(`Program: ${program}`);
@@ -42,28 +40,96 @@ function assignProgramData(data) {
     //numSemesters[program] = numberOfSemesters;
     //console.log(numSemesters);
   }
-  //console.log(extractedCourses);
   return extractedCourses;
 }
 
 function populateSemBoxes() {
-  fetchProgramJson();
-  assignProgramData();
-  // this should populate the course boxes with the proper courses
-  numberOfSemesters = 4;
-  console.log(numberOfSemesters);
+  assignProgramData(softwareDev);
+  let coursePerSem = extractedCourses.length / numberOfSemesters;
+  counter = 0;
   for (let i = 0; i < numberOfSemesters; i++) {
-    newBox = document.createElement('div');
-    newBox.classList.add('semester-box');
+    newBox = document.createElement("div");
+    newBox.classList.add("semester-box");
     semesters.append(newBox);
-    newUl = document.createElement('ul');
+    newUl = document.createElement("ul");
+    newUl.id = "semester" + (i + 1);
     newBox.append(newUl);
 
-    for (let course of extractedCourses) {
-      newElem = document.createElement('li');
-      newElem.textContent = course;
-      newUl.append(newElem);
-      console.log(course);
+    for (let j = 0; j < coursePerSem; j++) {
+      newElem = document.createElement("li");
+      newElem.innerHTML = extractedCourses[counter];
+      newElem.setAttribute("onclick", "getCourseInfo(this)");
+      newElem.newElem = newUl.append(newElem);
+      counter++;
     }
   }
 }
+
+async function getCourseInfo(e) {
+  courseClicked = e.innerHTML;
+  resJSON = await getCourseAPI(courseClicked);
+  console.log(resJSON.data.coursesFound[0]);
+}
+
+async function getCourseAPI(course) {
+  let temp = await fetch(
+    "http://server.jgaribsin.com:3000/courses/find?code=" + course,
+    {
+      headers: {},
+      method: "GET",
+    }
+  );
+  // .then((res) => {
+  //   console.log(res);
+  //   if (res.ok) {
+  //     return res.json();
+  //   } else {
+  //     throw new Error("Something went wrong!");
+  //   }
+  // })
+  // .then((data) => {
+  //   console.log(data);
+  // })
+  // .catch((err) => {
+  //   console.log(err);
+  // });
+
+  return temp.json();
+}
+
+// let courseData = response.json();
+// console.log(courseData);
+
+// let temp = fetch("http://server.jgaribsin.com:3000/courses/findAll", {
+//   headers: {},
+//   //mode: "cors",
+//   method: "GET",
+// });
+// console.log(temp);
+//   .then((res) => {
+//     console.log(res);
+//     if (res.ok) {
+//       return res.json();
+//     } else {
+//       throw new Error("Something went wrong!");
+//     }
+//   })
+//   .then((data) => {
+//     console.log(data);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
+// console.log(temp);
+
+// let response = fetch("http://server.jgaribsin.com:3000/courses/findAll"),{
+//   headers:{
+
+//   },
+//     method:"GET"
+//     credentials: "same-origin",
+// }).then()
+// }
+//console.log(response);
+//let courseData = response.json();
+//console.log(courseData);
