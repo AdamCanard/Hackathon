@@ -32,6 +32,10 @@ function updateBreadCrumb() {
     // Updates breadcrumb div with proper information
 }
 
+function parseProgram() {
+    
+}
+
 function populateBox() {
     // Calls API for specific page, program, and semester
     // For each semester div/block:
