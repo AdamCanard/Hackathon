@@ -3,9 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Placeholder</title>
+    <title>SAIT CourSearch</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
   </head>
   <body>
-    <script src="../scripts/script.js"></script>
+    <header></header>
+    <main>
+
+      <nav id="programList">
+        <h2>Programs</h2>
+        <a href="pages/semester.html" id="Software Development" class="program"
+          >Software Development</a
+        ><a href="pages/semester.html" id="Web Development" class="program"
+          >Web Development</a
+        ><a href="pages/semester.html" id="Network Systems" class="program"
+          >Network Systems</a
+        >
+      </nav>
+      <div>
+        <p class="breadcrumb"></p>
+        <h1>SAIT CourSearch</h1>
+        <form method="post" onsubmit="return false">
+          <input type="text" class="searchbar" />
+          <input type="submit" class="input-submit" onclick="search()" />
+        </form>
+        <input type="button" onclick="navigation()" />
+      </div>
+      <div class="search-output"></div>
+    </main>
+    <footer>
+      <p>Made by SAIT CourSearch Group</p>
+    </footer>
+    <script src="scripts/scripts.js"></script>
   </body>
+  <script src="./scripts/scripts.js"></script>
 </html>
