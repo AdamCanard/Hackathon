@@ -3,6 +3,9 @@ import {prisma} from '../prisma/client';
 
 export async function find(req: Request, res: Response) {
   const userQuery = req.query.query as string;
+  console.log(
+    `Invoked (${req.originalUrl}): requested to find courses/programs using query ${userQuery}`
+  );
 
   const coursesByName = await prisma.course.findMany({
     where: {name: {contains: userQuery, mode: 'insensitive'}},

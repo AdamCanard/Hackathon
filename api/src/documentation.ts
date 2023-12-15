@@ -34,7 +34,7 @@
  *                 data:
  *                   type: "object"
  *                   properties:
- *                     allCourses:
+ *                     courses:
  *                       type: array
  *                       items:
  *                         type: string

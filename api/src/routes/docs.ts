@@ -24,6 +24,9 @@ router.get('/v1', (req, res) =>
   res.send(swaggerJsdoc({swaggerDefinition, apis}))
 );
 
-router.use((req, res) => res.render('docs'));
+router.use((req, res) => {
+  console.log(`Invoked (${req.originalUrl}): rendering docs page`);
+  res.render('docs');
+});
 
 export default router;

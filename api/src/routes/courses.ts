@@ -9,9 +9,9 @@ router.get('/find', coursesController.find);
 
 router.post('/add', coursesController.add);
 
-router.delete('/remove', coursesController.remove);
-
 router.post('/addResource', coursesController.addResource);
+
+router.delete('/remove', coursesController.remove);
 
 router.delete('/removeResources', coursesController.removeResources);
 
