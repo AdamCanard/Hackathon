@@ -3,13 +3,18 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  font-family: "Poppins";
+  width: 1000px;
+}
+#semester_page {
+  margin: 0 auto;
 }
 
 a {
   text-decoration: none;
 }
-nav a{
-    color: black;
+nav a {
+  color: black;
 }
 
 a:hover {
@@ -29,6 +34,7 @@ footer {
   box-sizing: border-box;
   text-align: center;
 }
+
 header h1 {
   padding: 10px;
 }
@@ -72,52 +78,44 @@ label {
   color: white;
   font-size: 15px;
 }
-#index_main{
-    flex-direction: row;
-} 
-.search_div{
-
-    /* margin-top: 50px; */
-    text-align: center;
-    margin-bottom: 150px;
-    margin-right: 200px;
-    width: max-content;
-    
-    
-
+#index_main {
+  flex-direction: row;
 }
-.searchbar{
-    width: 450px;
-    height: 35px;
-    border: solid 2px #757FC9;
-    border-radius: 25px;
+.search_div {
+  /* margin-top: 50px; */
+  text-align: center;
+  margin-bottom: 150px;
+  margin-right: 200px;
+  width: max-content;
 }
-.input-submit{
-    /* margin-left: 5px; */
-    margin-top: 40px;
-    border-radius: 25px;
-    width: 99px;
-    height: 38px;
-    border: none;
-
+.searchbar {
+  width: 450px;
+  height: 35px;
+  border: solid 2px #757fc9;
+  border-radius: 25px;
 }
-.input-submit:hover{
-    background-color: white;
-    border: solid 1px #757FC9;
-
+.input-submit {
+  /* margin-left: 5px; */
+  margin-top: 40px;
+  border-radius: 25px;
+  width: 99px;
+  height: 38px;
+  border: none;
+}
+.input-submit:hover {
+  background-color: white;
+  border: solid 1px #757fc9;
 }
 nav {
   background-color: #f4f4f4;
-  
+
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  
 }
 
 nav ul {
   list-style-type: none;
-  padding-left: 10px; /* remove default padding */
 }
 
 nav ul li {
@@ -136,7 +134,7 @@ nav ul li:hover {
   background-color: white;
 }
 
- .main-container {
+.main-container {
   /* min-height: 100vh; */
   display: grid;
   grid-template-columns: 1fr 5fr;
@@ -151,21 +149,18 @@ aside {
   justify-content: center;
   align-items: center;
   padding: 20px;
-  /* background-image: url("../images/SAITlogo.png"); */
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 #semester_page .main-content h2 {
-  margin-left: 30px;
-  border-left: #757fc9;
   text-align: center;
 }
 
 .semesters {
   display: flex;
   flex-wrap: wrap;
-  padding-left: 20px;
+  padding-left: 40px;
 }
 
 .semesterBox {
@@ -190,48 +185,58 @@ aside {
 
 .semesterBox ul li {
   margin-bottom: 5px;
-} 
-
-
- html {
-    box-sizing: border-box;
- }
-
-*, *::before, *::after {
-    box-sizing: inherit;
 }
 
-body, p, li, ol, ul {
-    margin: 0;
-    padding: 0;
+html {
+  box-sizing: border-box;
 }
 
-header {
-    min-height: 50px;
-    background-color: skyblue;
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body,
+p,
+li,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+#index_page header {
+  min-height: 50px;
+  background-color: skyblue;
 }
 
 .main-container {
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 5fr;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
 }
 
 aside {
-    background-color: #f4f4f4;
-    margin-left: 0;
+  background-color: #f4f4f4;
+  margin-left: 0;
 }
 
-.main-content {
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
+#index_page .main-content {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+#semester_page .main-content {
+  justify-content: center;
+  align-items: center;
+}
+
 footer {
-    min-height: 50px;
-    background-color: skyblue;
+  min-height: 50px;
+  background-color: skyblue;
 }
 .semesterBox p {
   display: block;
@@ -239,4 +244,5 @@ footer {
   font-weight: bold;
   font-size: 1.2em;
   padding: 0 5px;
+  margin-bottom: 10px;
 }
