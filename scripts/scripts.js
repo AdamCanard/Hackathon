@@ -3,7 +3,6 @@ const semesterBox = document.querySelector(".semesterBox");
 const api = null // root link for API calls
 const breadcrumb = document.querySelector(".breadcrumb")
 const nav = document.querySelector("nav")
-const programList = api.call.whatever
 
 searchBar.addEventListener("input", search());
 
