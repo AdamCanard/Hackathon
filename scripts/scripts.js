@@ -6,8 +6,7 @@ const breadcrumb = document.querySelector(".breadcrumb")
 const nav = document.getElementById("n");
 const searchOutput = document.querySelector(".search-output")
 
-
-let testPrograms = ['cprg213', 'cprg216', 'cpnt217', 'comm238', 'math237'];
+let extractedCourses = [];
 
 searchSubmit.addEventListener("click", search());
 searchBar.addEventListener("input", search);
@@ -32,10 +31,9 @@ searchBar.addEventListener("input", search);
 //  console.log(err)
 //});
 //console.log(temp)
-
 fetchProgramJson();
-
 function search() {
+  console.log(extractedCourses);
   // Takes user input, calls database API for each character entered after 1 second of no typing (for server efficiency)
   // Search bar appears on every page. Search function will be called by eventlistener listening for characters entered in input
   // displays search results as list of links popped up below the search bar
@@ -43,16 +41,16 @@ function search() {
     searchOutput.removeChild(searchOutput.firstChild);
   }
 
-  for (let i = 0; i < testPrograms.length; i++) {
-    if (testPrograms[i].includes(searchBar.value) && searchBar.value) {
+  for (let i = 0; i < extractedCourses.length; i++) {
+    if (extractedCourses[i].includes(searchBar.value) && searchBar.value) {
       newElem = document.createElement('p');
-      newElem.textContent = testPrograms[i];
+      newElem.textContent = extractedCourses[i];
       searchOutput.append(newElem);
     }
   }
 }
 
-function assignProgramLength(data) {
+function assignProgramData(data) {
   // this is currently broken
   // I need a way to access the indexes of the dictionary without using its string key
   // and this does not work :(
@@ -73,9 +71,12 @@ function assignProgramLength(data) {
       let courses = semesters[semester];
       for (let course of courses) {
         console.log(`Course: ${course}`);
+        extractedCourses.push(course);
       }
     }
   }
+  console.log(extractedCourses);
+  return extractedCourses;
 }
 
 function fetchProgramJson() {
@@ -86,7 +87,7 @@ function fetchProgramJson() {
     .then((data) => {
       program = data;
       //console.log(data);
-      assignProgramLength(data);
+      assignProgramData(data);
     });
 }
 
