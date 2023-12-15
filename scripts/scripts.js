@@ -1,65 +1,44 @@
-const searchBar = document.querySelector(".searchBar");
+const searchBar = document.querySelector(".searchbar");
+const searchSubmit = document.querySelector(".input-submit");
 const semesterBox = document.querySelector(".semesterBox");
-<<<<<<< HEAD
 const api = null // root link for API calls
 const breadcrumb = document.querySelector(".breadcrumb")
-const nav = document.querySelector("nav")
-
-searchBar.addEventListener("input", search());
-
-function search() {
-    // Takes user input, calls database API for each character entered after 1 second of no typing (for server efficiency)
-    // Search bar appears on every page. Search function will be called by eventlistener listening for characters entered in input
-    // displays search results as list of links popped up below the search bar
-    displaySearch();
-}
-
-function displaySearch() {
-    // dynamically displays results obtained from search() function as a list of links below search bar
-}
-
-function assignProgramLength() {
-    
-}
-
-function navigation() {
-    // for each program in program list:
-    //      append program to sidebar nav with correct href
-}
-
-function updateBreadCrumb() {
-    // Page name, program name, and semester number are stored in variables
-    // Updates breadcrumb div with proper information
-}
-
-function parseProgram() {
-    // Parse the program information for display
-}
-
-function populateBox() {
-    // Calls API for specific page, program, and semester
-    // For each semester div/block:
-    //      append semester number
-    //      append courses with anchor links to course page
-}
-=======
-<<<<<<< HEAD
-const api = null; // root link for API calls
-const breadcrumb = document.querySelector(".breadcrumb");
-=======
-const api = null // root link for API calls
-const breadcrumb = document.querySelector(".breadcrumb")
-const nav = document.querySelector("nav")
->>>>>>> 0b61fcddc87079becd1ffff078cdb64445dbe38b
-
-//searchBar.addEventListener("input", search());
 const nav = document.getElementById("n");
+//const bodyA = document.getElementsByTagName("bodyDiv")
+//bodyA.addEventListener("click",(e)=>{
+  //console.log(e);
+//});
+
+searchSubmit.addEventListener("click", search());
+searchBar.addEventListener("input", search);
+
+//let temp = fetch('https://www.google.com',{
+//  headers:{
+//
+//  },
+//    method:"GET",
+//    credentials: "same-origin", // include, *same-origin, omit
+//}).then(res=>{
+
+//  console.log(res)
+//    if(res.ok){
+//      return res.json();
+//    }else{
+//      throw new Error("Something went wrong!")
+//    }
+//}).then(data=>{
+//  console.log(data);
+//}).catch(err=>{
+//  console.log(err)
+//});
+//console.log(temp)
 
 function search() {
   // Takes user input, calls database API for each character entered after 1 second of no typing (for server efficiency)
   // Search bar appears on every page. Search function will be called by eventlistener listening for characters entered in input
   // displays search results as list of links popped up below the search bar
-  displaySearch();
+  console.log(searchBar.value);
+  
 }
 
 function displaySearch() {
@@ -110,4 +89,3 @@ function populateBox() {
 }
 
 navigation();
->>>>>>> Adam
