@@ -1,7 +1,7 @@
 import express from 'express';
 import router from './routes';
 
-const PORT = 27005;
+const PORT = 3000;
 const VERSION = '0.0.0';
 
 const app = express();
