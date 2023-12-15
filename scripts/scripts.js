@@ -9,6 +9,8 @@ const nav = document.getElementById("n");
   //console.log(e);
 //});
 
+let testPrograms = ['cprg213', 'cprg216', 'cpnt217', 'comm238', 'math237'];
+
 searchSubmit.addEventListener("click", search());
 searchBar.addEventListener("input", search);
 
@@ -33,12 +35,18 @@ searchBar.addEventListener("input", search);
 //});
 //console.log(temp)
 
+
+
 function search() {
   // Takes user input, calls database API for each character entered after 1 second of no typing (for server efficiency)
   // Search bar appears on every page. Search function will be called by eventlistener listening for characters entered in input
   // displays search results as list of links popped up below the search bar
-  console.log(searchBar.value);
-  
+  console.log(searchBar.value)
+  for (let i = 0; i < testPrograms.length; i++) {
+    if (testPrograms[i].includes(searchBar.value)) {
+      console.log(testPrograms[i]);
+    }
+  }
 }
 
 function displaySearch() {
