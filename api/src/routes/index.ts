@@ -1,11 +1,13 @@
 import {Router} from 'express';
 import coursesRouter from './courses';
 import programsRouter from './programs';
+import docsRouter from './docs';
 
 const router = Router();
 
 router.use('/courses', coursesRouter);
 router.use('/programs', programsRouter);
+router.use('/docs', docsRouter);
 
 router.get('/', (req, res) => res.status(200).json({message: 'Healthy'}));
 
