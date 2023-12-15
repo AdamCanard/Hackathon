@@ -3,33 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SAITCourSearch</title>
-    <link rel="stylesheet"  type="text/css" href="/styles/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>SAIT CourSearch</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
   </head>
   <body>
-    <script src="../scripts/script.js"></script>
-    <header>
-    </header>
+    <header></header>
     <main>
-      <nav>
-        <p>Programs</p>
-          <ul>
-            <li><a class="program_link" href="./pages/semester.html">Software Devlopment</a></li>
-          </ul>
+      <nav id="n">
+        <h2>Programs</h2>
+        <ul></ul>
       </nav>
-      <div class="search_div">
         <h1>SAIT CourSearch</h1>
-        <form action="#" method="post">
-          <input type="search" id='search_bar' placeholder="Type Here" >
-          <input type="submit" value="Search">
+        <form method="post" onsubmit="return false">
+          <input type="text" class="searchbar">
+          <input type="submit" class="input-submit" onclick="search()">
         </form>
-      </div>
-
+        <input type="button" onclick="navigation()" />
+        <div class="search-output"></div>
     </main>
     <footer>
-      <p>Made by SAITCourSearch Group</p>
+      <p>Made by SAIT CourSearch Group</p>
     </footer>
   </body>
-
+  <script src="./scripts/scripts.js"></script>
 </html>
