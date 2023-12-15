@@ -88,5 +88,6 @@ async function getCourseAPI(course) {
       method: "GET",
     }
   );
+  console.log(temp);
   return temp.json();
 }

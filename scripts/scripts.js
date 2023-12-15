@@ -1,4 +1,3 @@
-
 const searchBar = document.querySelector(".searchbar");
 const searchSubmit = document.querySelector(".input-submit");
 const semesterBox = document.querySelector(".semesterBox");
@@ -14,27 +13,6 @@ let numSemesters = {};
 
 searchSubmit.addEventListener("click", search());
 searchBar.addEventListener("input", search);
-
-//let temp = fetch('https://www.google.com',{
-//  headers:{
-//
-//  },
-//    method:"GET",
-//    credentials: "same-origin", // include, *same-origin, omit
-//}).then(res=>{
-
-//  console.log(res)
-//    if(res.ok){
-//      return res.json();
-//    }else{
-//      throw new Error("Something went wrong!")
-//    }
-//}).then(data=>{
-//  console.log(data);
-//}).catch(err=>{
-//  console.log(err)
-//});
-//console.log(temp)
 
 fetchProgramJson();
 
@@ -104,12 +82,6 @@ function fetchProgramJson() {
     });
 }
 
-// for (elem in softwareDev) {
-//   newElem = document.createElement("div");
-//   newElem.innerHtml = elem;
-//   document.getElementById("n").appendChild(newElem);
-// }
-
 function navigation() {
   // for each program in program list:
   //      append program to sidebar nav with correct href
@@ -121,12 +93,9 @@ function navigation() {
   for (let program of programList) {
     console.log(program);
     newElem = document.createElement("p");
-    // Jeremy told me we need to get rid of INNERHTML because it is a security vulnerability
-    // consider .textcontent
     newElem.innerHTML = program;
     nav.append(newElem);
   }
-
 }
 
 function updateBreadCrumb() {
@@ -135,7 +104,6 @@ function updateBreadCrumb() {
 }
 
 function parseProgram() {}
-
 
 function loadCoursePage() {
   let url = new URLSearchParams(window.location.search);
@@ -149,7 +117,6 @@ function loadCoursePage() {
   }
 }
 
-
 function populateBox() {
   // Calls API for specific page, program, and semester
   // For each semester div/block:
@@ -158,4 +125,3 @@ function populateBox() {
 }
 
 navigation();
-
