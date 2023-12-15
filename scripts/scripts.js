@@ -36,8 +36,7 @@ searchBar.addEventListener("input", search);
 //});
 //console.log(temp)
 
-
-
+fetchProgramJson();
 function search() {
   // Takes user input, calls database API for each character entered after 1 second of no typing (for server efficiency)
   // Search bar appears on every page. Search function will be called by eventlistener listening for characters entered in input
@@ -55,13 +54,38 @@ function search() {
   }
 }
 
-function displaySearch() {
-  // dynamically displays results obtained from search() function as a list of links below search bar
+function assignProgramLength(data) {
+  // this is currently broken
+  // I need a way to access the indexes of the dictionary without using its string key
+  // and this does not work :(
+  let numberOfSemesters = 0;
+  for (let i = 0; i < data.length; i++) {
+    let program = JSON.parse(data)
+    console.log(program);
+    for (j = 0; j < 999; j++) {
+      console.log('here');
+      let semesters = program[j];
+      console.log(j+1)
+    }
+  }
+
+  for (semester in data[1]) {
+    //console.log(softwareDevelopment(semester));
+    numberOfSemesters++;
+  }
+  console.log(numberOfSemesters);
 }
 
-function assignProgramLength() {
-  // for program in programList:
-  //
+function fetchProgramJson() {
+  fetch("./scripts/software_development.json")
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      program = data;
+      //console.log(data);
+      assignProgramLength(data);
+    });
 }
 
 // for (elem in softwareDev) {
