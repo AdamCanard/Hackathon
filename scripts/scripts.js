@@ -6,7 +6,10 @@ const breadcrumb = document.querySelector(".breadcrumb")
 const nav = document.getElementById("n");
 const searchOutput = document.querySelector(".search-output")
 
+// contains all extracted courses from every program
 let extractedCourses = [];
+// contains programs and number of semesters as key-val pairs
+let numSemesters = {};
 
 searchSubmit.addEventListener("click", search());
 searchBar.addEventListener("input", search);
@@ -31,9 +34,12 @@ searchBar.addEventListener("input", search);
 //  console.log(err)
 //});
 //console.log(temp)
+
+
 fetchProgramJson();
+
 function search() {
-  console.log(extractedCourses);
+  //console.log(extractedCourses);
   // Takes user input, calls database API for each character entered after 1 second of no typing (for server efficiency)
   // Search bar appears on every page. Search function will be called by eventlistener listening for characters entered in input
   // displays search results as list of links popped up below the search bar
@@ -54,25 +60,26 @@ function assignProgramData(data) {
   let numberOfSemesters = 0;
   for (let program in data) {
     if (data.hasOwnProperty(program)) {
-      console.log(`Program: ${program}`);
+      //console.log(`Program: ${program}`);
     }
 
     let semesters = data[program];
     for (let semester in semesters) {
       if (semesters.hasOwnProperty(semester)) {
-        console.log(`Semester: ${semester}`);
+        //console.log(`Semester: ${semester}`);
         numberOfSemesters++;
       }
-      console.log(`Number of semesters in ${program}: ${numberOfSemesters}`);
 
       let courses = semesters[semester];
       for (let course of courses) {
-        console.log(`Course: ${course}`);
+        //console.log(`Course: ${course}`);
         extractedCourses.push(course);
       }
     }
+    numSemesters[program] = numberOfSemesters;
+    console.log(numSemesters);
   }
-  console.log(extractedCourses);
+  //console.log(extractedCourses);
   return extractedCourses;
 }
 
