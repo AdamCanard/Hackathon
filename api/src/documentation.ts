@@ -96,10 +96,7 @@
  *                     courseResources:
  *                       type: array
  *                       items:
- *                         type: object
- *                         properties:
- *                           data:
- *                             type: string
+ *                         type: string
  * /courses/add:
  *   post:
  *     tags:

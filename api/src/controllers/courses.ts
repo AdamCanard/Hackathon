@@ -48,12 +48,28 @@ export async function find(req: Request, res: Response) {
       },
     },
   });
-
+  const userResponse: {
+    code: string;
+    name: string;
+    credits: number;
+    semester: number;
+    year: number;
+    description: string | null;
+    courseResources: string[];
+  }[] = [];
+  coursesFound.forEach(async course => {
+    const resources: string[] = [];
+    course.courseResources.forEach(resource => resources.push(resource.data));
+    userResponse.push({
+      ...course,
+      courseResources: resources,
+    });
+  });
   return res.status(200).json({
     message: `Found ${coursesFound.length} courses`,
     status: 200,
     data: {
-      coursesFound,
+      coursesFound: userResponse,
     },
   });
 }
