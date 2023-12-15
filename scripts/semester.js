@@ -79,57 +79,5 @@ async function getCourseAPI(course) {
       method: "GET",
     }
   );
-  // .then((res) => {
-  //   console.log(res);
-  //   if (res.ok) {
-  //     return res.json();
-  //   } else {
-  //     throw new Error("Something went wrong!");
-  //   }
-  // })
-  // .then((data) => {
-  //   console.log(data);
-  // })
-  // .catch((err) => {
-  //   console.log(err);
-  // });
-
   return temp.json();
 }
-
-// let courseData = response.json();
-// console.log(courseData);
-
-// let temp = fetch("http://server.jgaribsin.com:3000/courses/findAll", {
-//   headers: {},
-//   //mode: "cors",
-//   method: "GET",
-// });
-// console.log(temp);
-//   .then((res) => {
-//     console.log(res);
-//     if (res.ok) {
-//       return res.json();
-//     } else {
-//       throw new Error("Something went wrong!");
-//     }
-//   })
-//   .then((data) => {
-//     console.log(data);
-//   })
-//   .catch((err) => {
-//     console.log(err);
-//   });
-// console.log(temp);
-
-// let response = fetch("http://server.jgaribsin.com:3000/courses/findAll"),{
-//   headers:{
-
-//   },
-//     method:"GET"
-//     credentials: "same-origin",
-// }).then()
-// }
-//console.log(response);
-//let courseData = response.json();
-//console.log(courseData);
