@@ -98,6 +98,7 @@ function assignProgramData(data) {
 function populateSemBoxes() {
   fetchProgramJson();
   assignProgramData();
+  console.log("populate");
   // this should populate the course boxes with the proper courses
   numberOfSemesters = 4;
   // need to update this to dynamically use course names
@@ -110,7 +111,11 @@ function populateSemBoxes() {
     newUl = document.createElement('ul');
     newBox.append(newUl);
 
-    for (let course of extractedCourses) {
+    let courses = extractedCourses;
+    // this code does not work. it should loop through extracted courses and append a new li for each course
+    // I don't think the loop even works. not sure why
+    for (const course of courses) {
+      console.log(course);
       newElem = document.createElement('li');
       newElem.textContent = course;
       newUl.append(newElem);
