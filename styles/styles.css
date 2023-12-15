@@ -3,12 +3,13 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  font-family: "Poppins";
-  width: 1000px;
 }
 
 a {
   text-decoration: none;
+}
+nav a{
+    color: black;
 }
 
 a:hover {
@@ -26,6 +27,7 @@ footer {
   color: white;
   padding: 10px;
   box-sizing: border-box;
+  text-align: center;
 }
 header h1 {
   padding: 10px;
@@ -68,15 +70,49 @@ label {
 
 .breadcrumb a {
   color: white;
+  font-size: 15px;
 }
+#index_main{
+    flex-direction: row;
+} 
+.search_div{
 
+    /* margin-top: 50px; */
+    text-align: center;
+    margin-bottom: 150px;
+    margin-right: 200px;
+    width: max-content;
+    
+    
+
+}
+.searchbar{
+    width: 450px;
+    height: 35px;
+    border: solid 2px #757FC9;
+    border-radius: 25px;
+}
+.input-submit{
+    /* margin-left: 5px; */
+    margin-top: 40px;
+    border-radius: 25px;
+    width: 99px;
+    height: 38px;
+    border: none;
+
+}
+.input-submit:hover{
+    background-color: white;
+    border: solid 1px #757FC9;
+
+}
 nav {
   background-color: #f4f4f4;
-  padding: 15px;
+  
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  width: 200px;
+  
 }
 
 nav ul {
@@ -100,7 +136,7 @@ nav ul li:hover {
   background-color: white;
 }
 
-.main-container {
+ .main-container {
   /* min-height: 100vh; */
   display: grid;
   grid-template-columns: 1fr 5fr;
@@ -154,8 +190,49 @@ aside {
 
 .semesterBox ul li {
   margin-bottom: 5px;
+} 
+
+
+ html {
+    box-sizing: border-box;
+ }
+
+*, *::before, *::after {
+    box-sizing: inherit;
 }
 
+body, p, li, ol, ul {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    min-height: 50px;
+    background-color: skyblue;
+}
+
+.main-container {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+}
+
+aside {
+    background-color: #f4f4f4;
+    margin-left: 0;
+}
+
+.main-content {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+footer {
+    min-height: 50px;
+    background-color: skyblue;
+}
 .semesterBox p {
   display: block;
   border-bottom: 1px gray solid;
