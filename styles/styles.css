@@ -11,6 +11,14 @@ body {
   min-height: 100vh;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 header,
 footer {
   background-color: deepskyblue;
@@ -22,6 +30,7 @@ footer {
   color: white;
   padding: 10px;
   box-sizing: border-box;
+  text-align: center;
 }
 header h1 {
   padding: 10px;
@@ -52,6 +61,42 @@ label {
   font-weight: bold;
 }
 
+#search_btn {
+  background-color: black;
+  border-radius: 10px;
+  color: white;
+  font-size: 15px;
+}
+#index_main{
+    flex-direction: row;
+} 
+.search_div{
+
+    margin-top: 50px;
+    text-align: center;
+    margin-bottom: 150px;
+    width: max-content;
+    margin-left: 200px;
+    
+
+}
+.searchbar{
+    width: 400px;
+    border: solid 2px #757FC9;
+    border-radius: 25px;
+}
+.input-submit{
+    margin-left: 5px;
+    border-radius: 25px;
+    width: 70px;
+    border: none;
+
+}
+.input-submit:hover{
+    background-color: white;
+    border: solid 2px #757FC9;
+
+}
 nav {
   background-color: #f4f4f4;
   padding: 10px;
@@ -61,18 +106,43 @@ nav {
   width: 200px;
 }
 
-main {
+nav ul {
+  list-style-type: none;
+}
+
+nav ul li {
+  margin-bottom: 5px;
+}
+
+/* main {
   flex: 1;
   padding: 20px;
   box-sizing: border-box;
-}
+} */
 
 .semesters {
   display: flex;
+  flex-wrap: wrap;
 }
 .semesterBox {
   border: solid 1px gray;
   border-radius: 20px;
   margin: 10px;
-  padding: 5px;
+  padding: 15px 20px;
+}
+
+.semesterBox ul {
+  list-style-type: none;
+  padding-left: 5px; /* remove default padding */
+}
+
+.semesterBox ul li::before {
+  content: "\2192"; /* Unicode character for right arrow */
+  display: inline-block;
+  width: 1em; /* Adjust the width as needed */
+  margin-right: 3px;
+}
+
+.semesterBox ul li {
+  margin-bottom: 5px;
 }
