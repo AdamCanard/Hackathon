@@ -1,0 +1,8 @@
+{
+  "Software Development": {
+    "Semester1": ["CPRG213", "CPRG216", "CPNT217", "COMM238", "MATH237"],
+    "Semester2": ["CPRG250", "CPRG303", "CPRG304", "CPRG305", "CPRG306"],
+    "Semester3": ["CPRG250", "CPRG303", "CPRG304", "CPRG305", "CPRG306"],
+    "Semester4": ["CPRG250", "CPRG303", "CPRG304", "CPRG305", "CPRG306"]
+  }
+}
