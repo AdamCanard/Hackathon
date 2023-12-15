@@ -1,0 +1,50 @@
+/* site wide styling */
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
+}
+/* add font family, submint button round hover on the nav menu */
+nav{
+    height:fit-content;
+    margin-right: 10px;
+    width: fit-content;
+}
+ul{
+    list-style: none;
+}
+ul li:hover{
+    background-color: #757FC9;
+    width: auto + 20px;
+}
+h1{
+    color: #4CADBA;
+}
+
+.search_div{
+   
+    margin-top: 50px;
+    text-align: center;
+    
+}
+#search_bar{
+
+    width: 400px;
+    border: solid 2px #757FC9;
+    border-radius: 25px;
+    
+}
+a{
+    text-decoration: none;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+footer{
+    margin-top: auto;
+    text-align: center;
+}
