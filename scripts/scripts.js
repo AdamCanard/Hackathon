@@ -9,7 +9,7 @@ const searchOutput = document.querySelector(".search-output");
 // contains all extracted courses from every program
 let extractedCourses = [];
 // contains programs and number of semesters as key-val pairs
-let numSemesters = {};
+let programAndNumSemesters = {};
 
 searchSubmit.addEventListener("click", search());
 searchBar.addEventListener("input", search);
@@ -82,8 +82,8 @@ function assignProgramData(data) {
         extractedCourses.push(course);
       }
     }
-    numSemesters[program] = numberOfSemesters;
-    console.log(numSemesters);
+    programAndNumSemesters[program] = numberOfSemesters;
+    console.log(programAndNumSemesters);
   }
   //console.log(extractedCourses);
   return extractedCourses;

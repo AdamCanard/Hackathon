@@ -5,7 +5,7 @@ const searchBar = document.querySelector('.searchbar');
 const searchOutput = document.querySelector(".search-output");
 const searchSubmit = document.querySelector(".input-submit");
 let extractedCourses = [];
-let numSemesters = {};
+let programAndNumSemesters = {};
 
 searchSubmit.addEventListener("click", search());
 searchBar.addEventListener("input", search);
@@ -72,8 +72,8 @@ function assignProgramData(data) {
         extractedCourses.push(course);
       }
     }
-    numSemesters[program] = numberOfSemesters;
-    console.log(numSemesters);
+    programAndNumSemesters[program] = numberOfSemesters;
+    console.log(programAndNumSemesters);
   }
   //console.log(extractedCourses);
   return extractedCourses;
