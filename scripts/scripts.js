@@ -1,3 +1,4 @@
+
 const searchBar = document.querySelector(".searchbar");
 const searchSubmit = document.querySelector(".input-submit");
 const semesterBox = document.querySelector(".semesterBox");
@@ -125,6 +126,7 @@ function navigation() {
     newElem.innerHTML = program;
     nav.append(newElem);
   }
+
 }
 
 function updateBreadCrumb() {
@@ -133,6 +135,7 @@ function updateBreadCrumb() {
 }
 
 function parseProgram() {}
+
 
 function loadCoursePage() {
   let url = new URLSearchParams(window.location.search);
@@ -146,6 +149,7 @@ function loadCoursePage() {
   }
 }
 
+
 function populateBox() {
   // Calls API for specific page, program, and semester
   // For each semester div/block:
@@ -154,3 +158,4 @@ function populateBox() {
 }
 
 navigation();
+
