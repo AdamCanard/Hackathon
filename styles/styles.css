@@ -25,6 +25,7 @@ footer {
   color: white;
   padding: 10px;
   box-sizing: border-box;
+  text-align: center;
 }
 header h1 {
   padding: 10px;
@@ -61,7 +62,36 @@ label {
   color: white;
   font-size: 15px;
 }
+#index_main{
+    flex-direction: row;
+} 
+.search_div{
 
+    margin-top: 50px;
+    text-align: center;
+    margin-bottom: 150px;
+    width: max-content;
+    margin-left: 200px;
+    
+
+}
+.searchbar{
+    width: 400px;
+    border: solid 2px #757FC9;
+    border-radius: 25px;
+}
+.input-submit{
+    margin-left: 5px;
+    border-radius: 25px;
+    width: 70px;
+    border: none;
+
+}
+.input-submit:hover{
+    background-color: white;
+    border: solid 2px #757FC9;
+
+}
 nav {
   background-color: #f4f4f4;
   padding: 10px;
@@ -79,11 +109,11 @@ nav ul li {
   margin-bottom: 5px;
 }
 
-main {
+/* main {
   flex: 1;
   padding: 20px;
   box-sizing: border-box;
-}
+} */
 
 .semesters {
   display: flex;

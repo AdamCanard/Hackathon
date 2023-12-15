@@ -11,18 +11,26 @@
     />
   </head>
   <body>
-    <header></header>
-    <main>
-      <nav id="n">
+    <header>
+      
+    </header>
+    <main  id="index_main">
+      <nav class="nav">
+        <i class="fa fa-bars" aria-hidden="true"></i>
         <h2>Programs</h2>
-        <ul></ul>
+        <ul>
+          <li><a href="./pages/semester.html">Software Devlopment</a></li>
+        </ul>
       </nav>
+   
+      <div class="search_div">
         <h1>SAIT CourSearch</h1>
         <form method="post" onsubmit="return false">
-          <input type="text" class="searchbar">
-          <input type="submit" class="input-submit" onclick="search()">
+          <input type="text" id='searh_bar'class="searchbar">
+          <p><input type="submit" class="input-submit" value="search" onclick="search()"></p>
         </form>
-        <input type="button" onclick="navigation()" />
+      </div>
+      
         <div class="search-output"></div>
     </main>
     <footer>
