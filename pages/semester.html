@@ -4,21 +4,72 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Semester</title>
-    <link rel="stylesheet" href="../Hackathon/styles/styles.css" />
+    <link rel="stylesheet" href="../styles/styles.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
   </head>
-  <body>
-    <nav>
-      <i class="fa fa-bars" aria-hidden="true"></i>
-      <p>Programs</p>
-      <ul>
-        <li><a href="./pages/course.html">Software Devlopment</a></li>
-        <li>asdfasdf</li>
-      </ul>
-    </nav>
+  <body id="semester_page">
+    <header style="display: flex">
+      <h1>semester_page</h1>
+      <form style="display: flex">
+        <p>
+          <label for="search">Location</label>
+          <input id="search" name="search" type="text" />
+        </p>
+        <p class="search">
+          <input type="button" value="Search" id="search_btn" />
+        </p>
+      </form>
+    </header>
+    <div style="display: flex">
+      <nav class="nav">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+        <p>Programs</p>
+        <ul>
+          <li><a href="./pages/semester.html">Software Devlopment</a></li>
+          <li>asdfasdf</li>
+          <li>aaaaaaaaaaa</li>
+          <li>aaaaaaaaaaa</li>
+          <li>aaaaaaaaaaa</li>
+          <li>aaaaaaaaaaa</li>
+        </ul>
+      </nav>
+      <main>
+        <h2>Semesters</h2>
+        <div class="semesters">
+          <div class="semesterBox">
+            <p>Semester 1</p>
+            <ul>
+              <li>CPNT</li>
+              <li>COMM</li>
+              <li>CPNT</li>
+              <li>COMM</li>
+            </ul>
+          </div>
+          <div class="semesterBox">
+            <p>Semester 2</p>
+            <ul>
+              <li>CPNT</li>
+              <li>COMM</li>
+              <li>CPNT</li>
+              <li>COMM</li>
+            </ul>
+          </div>
+          <div class="semesterBox">
+            <p>Semester 3</p>
+            <ul>
+              <li>CPNT</li>
+              <li>COMM</li>
+              <li>CPNT</li>
+              <li>COMM</li>
+            </ul>
+          </div>
+        </div>
+      </main>
+    </div>
+    <footer>footer coryright</footer>
     <script src="../scripts/script.js"></script>
   </body>
 </html>
