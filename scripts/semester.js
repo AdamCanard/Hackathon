@@ -8,7 +8,7 @@ const breadCrumb = document.querySelector(".breadcrumb")
 let extractedCourses = []
 let numberOfSemesters = 0;
 
-searchSubmit.addEventListener("click", search());
+searchSubmit.addEventListener("click", search()); // might just need to be search instead of search()
 searchBar.addEventListener("input", search);
 
 populateSemBoxes();
