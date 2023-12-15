@@ -1,9 +1,10 @@
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  font-family: "Poppins";
+  width: 1000px;
 }
 
 a {
@@ -56,15 +57,22 @@ label {
 }
 
 #search_btn {
-  background-color: black;
+  border: solid 1px #757fc9;
   border-radius: 10px;
+}
+
+#search_btn:hover {
+  background-color: white;
+  cursor: pointer;
+}
+
+.breadcrumb a {
   color: white;
-  font-size: 15px;
 }
 
 nav {
   background-color: #f4f4f4;
-  padding: 10px;
+  padding: 15px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -73,23 +81,59 @@ nav {
 
 nav ul {
   list-style-type: none;
+  padding-left: 10px; /* remove default padding */
 }
 
 nav ul li {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+nav h2 {
+  text-align: center;
+}
+nav a {
+  color: black;
+  display: block;
+}
+nav ul li:hover {
+  background-color: white;
 }
 
-main {
-  flex: 1;
+.main-container {
+  /* min-height: 100vh; */
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+}
+
+aside {
+  background-color: #f4f4f4;
+  margin-left: 0;
+}
+
+#semester_page .main-content {
+  justify-content: center;
+  align-items: center;
   padding: 20px;
-  box-sizing: border-box;
+  /* background-image: url("../images/SAITlogo.png"); */
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#semester_page .main-content h2 {
+  margin-left: 30px;
+  border-left: #757fc9;
+  text-align: center;
 }
 
 .semesters {
   display: flex;
   flex-wrap: wrap;
+  padding-left: 20px;
 }
+
 .semesterBox {
+  background-color: white;
   border: solid 1px gray;
   border-radius: 20px;
   margin: 10px;
@@ -110,4 +154,12 @@ main {
 
 .semesterBox ul li {
   margin-bottom: 5px;
+}
+
+.semesterBox p {
+  display: block;
+  border-bottom: 1px gray solid;
+  font-weight: bold;
+  font-size: 1.2em;
+  padding: 0 5px;
 }
