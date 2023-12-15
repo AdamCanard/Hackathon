@@ -3,6 +3,7 @@
     "lint": "gts lint",
     "clean": "gts clean",
     "compile": "tsc",
+    "postcompile": "copyfiles -u 1 src/**/*.ejs build/src && copyfiles package.json build",
     "fix": "gts fix",
     "watch": "nodemon -L ./src/server.ts",
     "prepare": "npm run compile",
@@ -11,6 +12,7 @@
   },
   "dependencies": {
     "@prisma/client": "^5.7.0",
+    "copyfiles": "^2.4.1",
     "ejs": "^3.1.9",
     "express": "^4.18.2",
     "swagger-jsdoc": "^6.2.8"
