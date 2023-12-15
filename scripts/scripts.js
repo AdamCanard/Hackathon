@@ -45,10 +45,9 @@ function search() {
   while (searchOutput.firstChild) {
     searchOutput.removeChild(searchOutput.firstChild);
   }
-  
-  for (let i = 0; i < testPrograms.length; i++) {
-    if (testPrograms[i].includes(searchBar.value)) {
 
+  for (let i = 0; i < testPrograms.length; i++) {
+    if (testPrograms[i].includes(searchBar.value) && searchBar.value) {
       newElem = document.createElement('p');
       newElem.textContent = testPrograms[i];
       searchOutput.append(newElem);
