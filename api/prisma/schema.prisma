@@ -30,16 +30,18 @@ model Course {
   credits     Int
   description String?
 
-  program         Program?          @relation(fields: [programId], references: [id])
-  programId       String?
-  courseResources CourseResources[]
+  program         Program?         @relation(fields: [programName], references: [name])
+  programName     String?
+  courseResources CourseResource[]
 
   @@map("courses")
 }
 
-model CourseResources {
+model CourseResource {
   id         String @id @default(cuid())
   course     Course @relation(fields: [courseCode], references: [code])
   courseCode String
   data       String
+
+  @@map("course_resources")
 }

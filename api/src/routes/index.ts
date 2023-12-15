@@ -1,6 +1,11 @@
-import express, {Router} from 'express';
+import {Router} from 'express';
+import coursesRouter from './courses';
+import programsRouter from './programs';
 
 const router = Router();
+
+router.use('/courses', coursesRouter);
+router.use('/programs', programsRouter);
 
 router.get('/', (req, res) => res.status(200).json({message: 'Healthy'}));
 
