@@ -4,6 +4,7 @@ const semesterBox = document.querySelector(".semesterBox");
 const api = null // root link for API calls
 const breadcrumb = document.querySelector(".breadcrumb")
 const nav = document.getElementById("n");
+const searchOutput = document.querySelector(".search-output")
 //const bodyA = document.getElementsByTagName("bodyDiv")
 //bodyA.addEventListener("click",(e)=>{
   //console.log(e);
@@ -41,10 +42,18 @@ function search() {
   // Takes user input, calls database API for each character entered after 1 second of no typing (for server efficiency)
   // Search bar appears on every page. Search function will be called by eventlistener listening for characters entered in input
   // displays search results as list of links popped up below the search bar
-  console.log(searchBar.value)
+
   for (let i = 0; i < testPrograms.length; i++) {
     if (testPrograms[i].includes(searchBar.value)) {
-      console.log(testPrograms[i]);
+      for (let j = 0; i < searchOutput.length; j++) {
+        // this part currently does not work. I wish it did.
+        if (!searchOutput[i].includes(searchBar.value)) {
+          searchOutput[i].parentNode.removeChild(searchOutput[i]);
+        }
+      }
+      newElem = document.createElement('p');
+      newElem.textContent = testPrograms[i];
+      searchOutput.append(newElem);
     }
   }
 }
@@ -75,6 +84,8 @@ function navigation() {
   for (let program of programList) {
     console.log(program);
     newElem = document.createElement("p");
+    // Jeremy told me we need to get rid of INNERHTML because it is a security vulnerability
+    // consider .textcontent
     newElem.innerHTML = program;
     nav.append(newElem);
   }
