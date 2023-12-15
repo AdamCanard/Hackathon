@@ -1,5 +1,8 @@
 const semesterList = document.querySelector('.semester-list');
+const semesterBox = document.querySelector('.semester-box');
+const semesters = document.querySelector('.semesters');
 let extractedCourses = []
+let numberOfSemesters = 0;
 
 populateSemBoxes();
 
@@ -18,7 +21,6 @@ function fetchProgramJson() {
 }
 
 function assignProgramData(data) {
-  let numberOfSemesters = 0;
   for (let program in data) {
     if (data.hasOwnProperty(program)) {
       //console.log(`Program: ${program}`);
@@ -47,12 +49,21 @@ function assignProgramData(data) {
 function populateSemBoxes() {
   fetchProgramJson();
   assignProgramData();
-  console.log(extractedCourses);
   // this should populate the course boxes with the proper courses
-  for (let i = 0; i < extractedCourses.length; i++) {
-    newElem = document.createElement('li');
-    newElem.textContent = extractedCourses[i];
-    semesterList.append(newElem);
-    console.log(extractedCourses[i]);
+  numberOfSemesters = 4;
+  console.log(numberOfSemesters);
+  for (let i = 0; i < numberOfSemesters; i++) {
+    newBox = document.createElement('div');
+    newBox.classList.add('semester-box');
+    semesters.append(newBox);
+    newUl = document.createElement('ul');
+    newBox.append(newUl);
+
+    for (let course of extractedCourses) {
+      newElem = document.createElement('li');
+      newElem.textContent = course;
+      newUl.append(newElem);
+      console.log(course);
+    }
   }
 }
