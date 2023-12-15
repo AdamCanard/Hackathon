@@ -18,8 +18,7 @@ function displaySearch() {
 }
 
 function assignProgramLength() {
-    // for program in programList:
-    //      
+    
 }
 
 function navigation() {
@@ -33,7 +32,7 @@ function updateBreadCrumb() {
 }
 
 function parseProgram() {
-    
+    // Parse the program information for display
 }
 
 function populateBox() {
