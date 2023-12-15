@@ -42,7 +42,7 @@ function search() {
   }
 
   for (let i = 0; i < extractedCourses.length; i++) {
-    if (extractedCourses[i].includes(searchBar.value) && searchBar.value) {
+    if (extractedCourses[i].toLowerCase().includes(searchBar.value) && searchBar.value) {
       newElem = document.createElement('p');
       newElem.textContent = extractedCourses[i];
       searchOutput.append(newElem);
