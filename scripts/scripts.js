@@ -51,9 +51,6 @@ function search() {
 }
 
 function assignProgramData(data) {
-  // this is currently broken
-  // I need a way to access the indexes of the dictionary without using its string key
-  // and this does not work :(
   let numberOfSemesters = 0;
   for (let program in data) {
     if (data.hasOwnProperty(program)) {
