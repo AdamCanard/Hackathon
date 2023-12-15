@@ -4,12 +4,19 @@ const api = null // root link for API calls
 const breadcrumb = document.querySelector(".breadcrumb")
 const nav = document.querySelector("nav")
 
+searchBar.addEventListener("input", search());
 
 function search() {
     // Takes user input, calls database API for each character entered after 1 second of no typing (for server efficiency)
     // Search bar appears on every page. Search function will be called by eventlistener listening for characters entered in input
-
+    // displays search results as list of links popped up below the search bar
+    // displaySearch();
 }
+
+function displaySearch() {
+    // dynamically displays results obtained from search() function as a list of links below search bar
+}
+
 
 function navigation() {
     // for each program in program list:
