@@ -1,6 +1,18 @@
 import {Request, Response} from 'express';
 import {prisma} from '../prisma/client';
 
+export async function displayPrograms(req: Request, res: Response) {
+  const allPrograms = await prisma.program.findMany({select: {name: true}});
+
+  return res.status(200).json({
+    message: `Showing all ${allPrograms.length} programs`,
+    status: 200,
+    data: {
+      allPrograms,
+    },
+  });
+}
+
 export async function findProgram(req: Request, res: Response) {
   const programQuery = req.query.program as string;
   const programsFound = await prisma.program.findMany({
@@ -31,6 +43,7 @@ export async function findProgram(req: Request, res: Response) {
     },
   });
 }
+
 export async function addProgram(req: Request, res: Response) {
   const {name, semesters, years, type, school, courses} = req.body;
   // TODO: verify client inputs

@@ -51,3 +51,15 @@ export async function addCourseResource(req: Request, res: Response) {
 
   return res;
 }
+
+export async function displayCourses(req: Request, res: Response) {
+  const allCourses = await prisma.course.findMany({select: {name: true}});
+
+  return res.status(200).json({
+    message: `Showing all ${allCourses.length} courses`,
+    status: 200,
+    data: {
+      allCourses,
+    },
+  });
+}
