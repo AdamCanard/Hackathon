@@ -1,10 +1,8 @@
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  font-family: "Poppins";
   font-family: "Poppins";
   width: 1000px;
 }
@@ -80,15 +78,6 @@ label {
   color: white;
   font-size: 15px;
 }
-#index_main {
-  flex-direction: row;
-}
-.search_div {
-  /* margin-top: 50px; */
-  text-align: center;
-  margin-bottom: 150px;
-  margin-right: 200px;
-  width: max-content;
 #index_page {
   margin: 0 auto;
 }
@@ -96,7 +85,7 @@ label {
   /* margin-top: 50px; */
   text-align: center;
   margin-bottom: 150px;
- 
+
   width: max-content;
 }
 .searchbar {
@@ -137,8 +126,6 @@ nav ul li {
 nav h2 {
   text-align: center;
 }
-a {
-  display: block;
 nav a {
   color: black;
   display: block;
@@ -150,7 +137,6 @@ nav ul li:hover {
 main {
   flex: 1;
   box-sizing: border-box;
-}
 }
 
 #semester_page .main-content {
@@ -213,9 +199,6 @@ ul {
   padding: 0;
 }
 
-header {
-  min-height: 50px;
-  background-color: skyblue;
 #index_page header {
   min-height: 50px;
 }
@@ -231,11 +214,6 @@ aside {
   margin-left: 0;
 }
 
-.main-content {
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 #index_page .main-content {
   background-color: white;
   display: flex;
@@ -249,8 +227,6 @@ aside {
 }
 
 footer {
-  min-height: 50px;
-  background-color: skyblue;
   min-height: 50px;
 }
 .semesterBox p {
