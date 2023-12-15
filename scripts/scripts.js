@@ -5,10 +5,7 @@ const api = null // root link for API calls
 const breadcrumb = document.querySelector(".breadcrumb")
 const nav = document.getElementById("n");
 const searchOutput = document.querySelector(".search-output")
-//const bodyA = document.getElementsByTagName("bodyDiv")
-//bodyA.addEventListener("click",(e)=>{
-  //console.log(e);
-//});
+
 
 let testPrograms = ['cprg213', 'cprg216', 'cpnt217', 'comm238', 'math237'];
 
@@ -37,6 +34,7 @@ searchBar.addEventListener("input", search);
 //console.log(temp)
 
 fetchProgramJson();
+
 function search() {
   // Takes user input, calls database API for each character entered after 1 second of no typing (for server efficiency)
   // Search bar appears on every page. Search function will be called by eventlistener listening for characters entered in input
@@ -59,21 +57,25 @@ function assignProgramLength(data) {
   // I need a way to access the indexes of the dictionary without using its string key
   // and this does not work :(
   let numberOfSemesters = 0;
-  for (let i = 0; i < data.length; i++) {
-    let program = JSON.parse(data)
-    console.log(program);
-    for (j = 0; j < 999; j++) {
-      console.log('here');
-      let semesters = program[j];
-      console.log(j+1)
+  for (let program in data) {
+    if (data.hasOwnProperty(program)) {
+      console.log(`Program: ${program}`);
+    }
+
+    let semesters = data[program];
+    for (let semester in semesters) {
+      if (semesters.hasOwnProperty(semester)) {
+        console.log(`Semester: ${semester}`);
+        numberOfSemesters++;
+      }
+      console.log(`Number of semesters in ${program}: ${numberOfSemesters}`);
+
+      let courses = semesters[semester];
+      for (let course of courses) {
+        console.log(`Course: ${course}`);
+      }
     }
   }
-
-  for (semester in data[1]) {
-    //console.log(softwareDevelopment(semester));
-    numberOfSemesters++;
-  }
-  console.log(numberOfSemesters);
 }
 
 function fetchProgramJson() {
