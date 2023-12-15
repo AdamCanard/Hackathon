@@ -1,0 +1,73 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header,
+footer {
+  background-color: deepskyblue;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgb(15, 94, 128, 0.3)
+  );
+  color: white;
+  padding: 10px;
+  box-sizing: border-box;
+}
+header h1 {
+  padding: 10px;
+}
+
+header h1::first-letter {
+  font-size: 40px;
+}
+
+header form {
+  flex-grow: 1;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 10px;
+  margin: 10px;
+}
+
+header form p {
+  margin: 3px;
+}
+
+header form label {
+  margin: 5px;
+}
+
+label {
+  color: #444444;
+  font-weight: bold;
+}
+
+nav {
+  background-color: #f4f4f4;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+}
+
+main {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.semesters {
+  display: flex;
+}
+.semesterBox {
+  border: solid 1px gray;
+  border-radius: 20px;
+  margin: 10px;
+  padding: 5px;
+}
