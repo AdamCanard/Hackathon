@@ -50,8 +50,9 @@ function search() {
   for (let i = 0; i < extractedCourses.length; i++) {
     if (extractedCourses[i].toLowerCase().includes(searchBar.value) && searchBar.value) {
       newElem = document.createElement('a');
-      newElem.href = "/pages/course.html";
+      newElem.href = "/pages/course.html?code=" + encodeURIComponent(extractedCourses[i]);
       newElem.classList.add("course-anchor");
+      newElem.onclick = loadCoursePage;
       newElem.textContent = extractedCourses[i];
       searchOutput.append(newElem);
     }
@@ -87,6 +88,9 @@ function assignProgramData(data) {
 
 function fetchProgramJson() {
   fetch("./scripts/software_development.json")
+  //fetch("http://server.jgaribsin.com:3000/courses/find", {
+  //method:'GET',
+  //credentials:'same-origin'})
     .then((res) => {
       return res.json();
     })
@@ -127,6 +131,12 @@ function updateBreadCrumb() {
 
 function parseProgram() {
     
+}
+
+function loadCoursePage() {
+  let url = new URLSearchParams(window.location.search);
+  let courseCode = url.get('code');
+  console.log(courseCode);
 }
 
 function populateBox() {
