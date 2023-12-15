@@ -1,31 +1,13 @@
-const h1 = document.querySelector('h1');
-const courseDescr = document.querySelector('.course-descr');
-const resourceDiv = document.querySelector('.resources');
-const searchBar = document.querySelector('.searchbar');
+const h1 = document.querySelector("h1");
+const courseDescr = document.querySelector(".course-descr");
+const resourceDiv = document.getElementById("resources");
+const searchBar = document.querySelector(".searchbar");
 const searchOutput = document.querySelector(".search-output");
 const searchSubmit = document.querySelector(".input-submit");
 let extractedCourses = [];
 let numSemesters = {};
 
-searchSubmit.addEventListener("click", search());
-searchBar.addEventListener("input", search);
-
 loadCoursePage();
-fetchProgramJson();
-
-function fetchProgramJson() {
-  fetch("/scripts/test.json")
-    //fetch("http://server.jgaribsin.com:3000/courses/find", {
-    //method:'GET',
-    //credentials:'same-origin'})
-    .then((res) => {
-      return res.json();
-    })
-    .then((data) => {
-      //console.log(data);
-      assignProgramData(data);
-    });
-}
 
 function search() {
   //console.log(extractedCourses);
@@ -52,44 +34,25 @@ function search() {
   }
 }
 
-function assignProgramData(data) {
-  let numberOfSemesters = 0;
-  for (let program in data) {
-    if (data.hasOwnProperty(program)) {
-      //console.log(`Program: ${program}`);
-    }
-
-    let semesters = data[program];
-    for (let semester in semesters) {
-      if (semesters.hasOwnProperty(semester)) {
-        //console.log(`Semester: ${semester}`);
-        numberOfSemesters++;
-      }
-
-      let courses = semesters[semester];
-      for (let course of courses) {
-        //console.log(`Course: ${course}`);
-        extractedCourses.push(course);
-      }
-    }
-    numSemesters[program] = numberOfSemesters;
-    console.log(numSemesters);
-  }
-  //console.log(extractedCourses);
-  return extractedCourses;
-}
-
 function loadCoursePage() {
   let url = window.location.search;
   let urlParams = new URLSearchParams(url);
-  let courseCode = urlParams.get('code');
-  // needs to wait until after window has loaded
-  console.log(courseCode);
-  h1.textContent = courseCode;
-  // this should call the course description API
-  courseDescr.textContent = 'this (course description) should be populated by the API!';
-  // this will have to be in a loop. for resource in resources json: create and append element
-  let resources = document.createElement('p');
-  resources.textContent = 'this (resource section) should also be populated by the API';
-  resourceDiv.append(resources);
+  let header = document.createElement("h1");
+  let desc = document.createElement("p");
+  let res = document.createElement("p");
+  let courseCode = localStorage.getItem("code");
+  let courseDesc = localStorage.getItem("Desc");
+  let courseName = localStorage.getItem("name");
+  let courseRes = localStorage.getItem("res");
+  //needs to wait until after window has loaded
+  header.textContent = courseCode + ": " + courseName;
+  //this should call the course description API
+  desc.textContent = courseDesc;
+  //this will have to be in a loop. for resource in resources json: create and append element
+  // let resources = document.createElement("p");
+  // resources.textContent =
+  //   "this (resource section) should also be populated by the API";
+  resourceDiv.append(header);
+  resourceDiv.append(desc);
+  resourceDiv.append(courseRes);
 }

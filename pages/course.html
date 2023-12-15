@@ -3,41 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Course</title>
-
-    <link rel="stylesheet" href="/styles/styles.css" />
-
+    <title>SAIT CourSearch</title>
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
   </head>
   <body>
-    <header>
-      <form method="post" onsubmit="return false">
-        <input type="text" class="searchbar" />
-        <input type="submit" class="input-submit" onclick="search()" />
-      </form>
-      <input type="button" onclick="navigation()" />
-      <div class="search-output">test</div>
-    </header>
-      
-    <main>
-      <nav>
-        <i class="fa fa-bars" aria-hidden="true"></i>
-        <p>Programs</p>
-        <ul>
+    <header class="main-header"></header>
+    <main class="main-container">
+      <aside>
+        <nav class="nav">
+          <h2>Programs</h2>
+          <ul>
+            <li><a href="./pages/semester.html">Software Devlopment</a></li>
+          </ul>
+        </nav>
+      </aside>
 
-          <li><a href="/pages/semester.html">Software Devlopment</a></li>
-
-          <li>asdfasdf</li>
-        </ul>
-      </nav>
-      <h1></h1>
-      <p class="course-descr"></p>
-      <div class="resources"></div>
+      <div class="main-content" id="resources"></div>
     </main>
-    <footer></footer>
+
+    <footer>
+      <p>Made by SAIT CourSearch Group</p>
+    </footer>
   </body>
-  <script src="/scripts/course.js"></script>
+  <script src="../scripts/course.js"></script>
 </html>

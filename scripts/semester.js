@@ -49,26 +49,35 @@ function populateSemBoxes() {
   counter = 0;
   for (let i = 0; i < numberOfSemesters; i++) {
     newBox = document.createElement("div");
-    newBox.classList.add("semester-box");
+    newBox.classList.add("semesterBox");
     semesters.append(newBox);
     newUl = document.createElement("ul");
     newUl.id = "semester" + (i + 1);
     newBox.append(newUl);
 
     for (let j = 0; j < coursePerSem; j++) {
+      anchorElem = document.createElement("a");
+      anchorElem.setAttribute("onclick", "getCourseInfo(this)");
+      newUl.append(anchorElem);
       newElem = document.createElement("li");
       newElem.innerHTML = extractedCourses[counter];
-      newElem.setAttribute("onclick", "getCourseInfo(this)");
-      newElem.newElem = newUl.append(newElem);
+      anchorElem.append(newElem);
       counter++;
     }
   }
 }
 
 async function getCourseInfo(e) {
-  courseClicked = e.innerHTML;
-  resJSON = await getCourseAPI(courseClicked);
-  console.log(resJSON.data.coursesFound[0]);
+  listelem = e.innerHTML.slice(4, -5);
+  console.log(listelem);
+  resJSON = await getCourseAPI(listelem);
+  data = resJSON.data.coursesFound[0];
+  console.log(data);
+  localStorage.setItem("code", data.code);
+  localStorage.setItem("Desc", data.description);
+  localStorage.setItem("name", data.name);
+  localStorage.setItem("res", data.courseResources);
+  document.location.href = "../pages/course.html";
 }
 
 async function getCourseAPI(course) {
