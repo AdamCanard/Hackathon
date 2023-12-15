@@ -19,7 +19,21 @@
     />
   </head>
   <body>
-    <header class="main-header"></header>
+    <header style="display: flex">
+      <div class="breadcrumb">
+        <a href="../index.html">Home</a> > <a href="./semester.html">program</a>
+      </div>
+      <form style="display: flex">
+        <p>
+          <label for="top_search">Program</label>
+          <input id="top_search" name="search" type="text" />
+        </p>
+        <p class="search">
+          <input type="button" value="Search" id="search_btn" />
+        </p>
+      </form>
+    </header>
+
     <main class="main-container">
       <aside>
         <nav class="nav">
