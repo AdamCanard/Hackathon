@@ -1,16 +1,19 @@
 {
   "devDependencies": {
+    "@types/node": "20.8.2",
     "gts": "^5.2.0",
-    "typescript": "^5.3.3",
-    "@types/node": "20.8.2"
+    "nodemon": "^3.0.2",
+    "ts-node": "^10.9.2",
+    "typescript": "~5.2.0"
   },
   "scripts": {
     "lint": "gts lint",
     "clean": "gts clean",
     "compile": "tsc",
     "fix": "gts fix",
-    "prepare": "npm.cmd run compile",
-    "pretest": "npm.cmd run compile",
-    "posttest": "npm.cmd run lint"
+    "watch": "nodemon -L ./src/index.ts",
+    "prepare": "npm run compile",
+    "pretest": "npm run compile",
+    "posttest": "npm run lint"
   }
 }
