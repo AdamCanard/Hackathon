@@ -4,6 +4,7 @@ const semesters = document.querySelector('.semesters');
 const searchBar = document.querySelector('.searchbar');
 const searchOutput = document.querySelector(".search-output");
 const searchSubmit = document.querySelector(".input-submit");
+const breadCrumb = document.querySelector(".breadcrumb")
 let extractedCourses = []
 let numberOfSemesters = 0;
 
@@ -39,6 +40,7 @@ function search() {
   }
 }
 
+// change this to load semester page -- or do we even need this on this page
 function loadCoursePage() {
   let url = window.location.search;
   let urlParams = new URLSearchParams(url);
@@ -99,7 +101,9 @@ function populateSemBoxes() {
   assignProgramData();
   // this should populate the course boxes with the proper courses
   numberOfSemesters = 4;
+  // need to update this to dynamically use course names
   console.log(numberOfSemesters);
+  updateBreadCrumb(numberOfSemesters);
   for (let i = 0; i < numberOfSemesters; i++) {
     newBox = document.createElement('div');
     newBox.classList.add('semester-box');
@@ -114,4 +118,10 @@ function populateSemBoxes() {
       console.log(course);
     }
   }
+}
+
+function updateBreadCrumb(semesterName) {
+  // Page name, program name, and semester number are stored in variables
+  // Updates breadcrumb div with proper information
+  breadCrumb.textContent = `Home > Software Development > Semester ${semesterName}`;
 }

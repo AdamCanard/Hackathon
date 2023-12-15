@@ -4,6 +4,7 @@ const resourceDiv = document.querySelector('.resources');
 const searchBar = document.querySelector('.searchbar');
 const searchOutput = document.querySelector(".search-output");
 const searchSubmit = document.querySelector(".input-submit");
+const breadCrumb = document.querySelector(".breadcrumb")
 let extractedCourses = [];
 let programAndNumSemesters = {};
 
@@ -83,6 +84,7 @@ function loadCoursePage() {
   let url = window.location.search;
   let urlParams = new URLSearchParams(url);
   let courseCode = urlParams.get('code');
+  updateBreadCrumb(courseCode);
   // needs to wait until after window has loaded
   console.log(courseCode);
   h1.textContent = courseCode;
@@ -92,4 +94,10 @@ function loadCoursePage() {
   let resources = document.createElement('p');
   resources.textContent = 'this (resource section) should also be populated by the API';
   resourceDiv.append(resources);
+}
+
+function updateBreadCrumb(courseCode) {
+  // Page name, program name, and semester number are stored in variables
+  // Updates breadcrumb div with proper information
+  breadCrumb.textContent = `Home > ${courseCode}`;
 }

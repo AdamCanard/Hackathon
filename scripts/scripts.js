@@ -1,4 +1,3 @@
-
 const searchBar = document.querySelector(".searchbar");
 const searchSubmit = document.querySelector(".input-submit");
 const semesterBox = document.querySelector(".semesterBox");
@@ -129,10 +128,6 @@ function navigation() {
 
 }
 
-function updateBreadCrumb() {
-  // Page name, program name, and semester number are stored in variables
-  // Updates breadcrumb div with proper information
-}
 
 function parseProgram() {}
 
@@ -149,7 +144,6 @@ function loadCoursePage() {
   }
 }
 
-
 function populateBox() {
   // Calls API for specific page, program, and semester
   // For each semester div/block:
@@ -158,4 +152,3 @@ function populateBox() {
 }
 
 navigation();
-
