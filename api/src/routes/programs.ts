@@ -1,12 +1,14 @@
 import {Router} from 'express';
-import {addProgram, findProgram, displayPrograms} from '../handlers';
+import {programsController} from '../controllers';
 
 const router = Router();
 
-router.get('/findAll', displayPrograms);
+router.get('/findAll', programsController.findAll);
 
-router.get('/find', findProgram);
+router.get('/find', programsController.find);
 
-router.post('/addProgram', addProgram);
+router.post('/add', programsController.add);
+
+router.delete('/remove', programsController.remove);
 
 export default router;

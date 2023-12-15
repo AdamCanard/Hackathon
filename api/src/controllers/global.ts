@@ -1,7 +1,7 @@
 import {Request, Response} from 'express';
 import {prisma} from '../prisma/client';
 
-export async function findProgramsAndCourses(req: Request, res: Response) {
+export async function find(req: Request, res: Response) {
   const userQuery = req.query.query as string;
 
   const coursesByName = await prisma.course.findMany({

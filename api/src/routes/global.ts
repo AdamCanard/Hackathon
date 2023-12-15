@@ -1,8 +1,8 @@
 import {Router} from 'express';
-import {findProgramsAndCourses} from '../handlers';
+import {globalController} from '../controllers';
 
 const router = Router();
 
-router.get('/findProgramsAndCourses', findProgramsAndCourses);
+router.get('/find', globalController.find);
 
 export default router;

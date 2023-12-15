@@ -6,10 +6,25 @@ import docsRouter from './docs';
 
 const router = Router();
 
+// /courses/findAll
+// /courses/find
+// /courses/add
+// /courses/addResource
+// /courses/remove
+// /courses/removeResource
 router.use('/courses', coursesRouter);
-router.use('/programs', programsRouter);
-router.use('/global', globalRouter);
+
+// /docs
 router.use('/docs', docsRouter);
+
+// /global/find
+router.use('/global', globalRouter);
+
+// /programs/findAll
+// /programs/find
+// /programs/add
+// /programs/remove
+router.use('/programs', programsRouter);
 
 router.get('/', (req, res) => res.status(200).json({message: 'Healthy'}));
 

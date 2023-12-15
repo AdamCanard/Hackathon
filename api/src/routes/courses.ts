@@ -1,18 +1,18 @@
 import {Router} from 'express';
-import {
-  addCourse,
-  addCourseResource,
-  findCourse,
-  displayCourses,
-} from '../handlers';
+import {coursesController} from '../controllers';
 
 const router = Router();
 
-router.get('/findAll', displayCourses);
+router.get('/findAll', coursesController.findAll);
 
-router.get('/find', findCourse);
+router.get('/find', coursesController.find);
 
-router.post('/addCourse', addCourse);
-// router.post('/addResource', addCourseResource);
+router.post('/add', coursesController.add);
+
+router.delete('/remove', coursesController.remove);
+
+router.post('/addResource', coursesController.addResource);
+
+router.delete('/removeResources', coursesController.removeResources);
 
 export default router;

@@ -1,7 +1,7 @@
 import {Request, Response} from 'express';
 import {prisma} from '../prisma/client';
 
-export async function displayPrograms(req: Request, res: Response) {
+export async function findAll(req: Request, res: Response) {
   const allPrograms = await prisma.program.findMany({select: {name: true}});
 
   return res.status(200).json({
@@ -13,7 +13,7 @@ export async function displayPrograms(req: Request, res: Response) {
   });
 }
 
-export async function findProgram(req: Request, res: Response) {
+export async function find(req: Request, res: Response) {
   const programQuery = req.query.program as string;
   const programsFound = await prisma.program.findMany({
     where: {name: {contains: programQuery, mode: 'insensitive'}},
@@ -44,7 +44,7 @@ export async function findProgram(req: Request, res: Response) {
   });
 }
 
-export async function addProgram(req: Request, res: Response) {
+export async function add(req: Request, res: Response) {
   const {name, semesters, years, type, school, courses} = req.body;
   // TODO: verify client inputs
 
@@ -74,6 +74,17 @@ export async function addProgram(req: Request, res: Response) {
 
   return res.status(200).json({
     message: `Program ${createdProgram.name} created successfully`,
+    status: 200,
+    data: {},
+  });
+}
+
+export async function remove(req: Request, res: Response) {
+  const {program} = req.body;
+  const deletedProgram = await prisma.program.delete({where: {name: program}});
+
+  return res.status(200).json({
+    message: `Deleted program ${program}`,
     status: 200,
     data: {},
   });
