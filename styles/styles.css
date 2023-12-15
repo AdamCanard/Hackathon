@@ -1,8 +1,3 @@
-.search-output {
-  display: flex;
-  flex-direction: column;
-}
-
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -10,6 +5,11 @@ body {
   flex-direction: column;
   min-height: 100vh;
   font-family: "Poppins";
+  font-family: "Poppins";
+  width: 1000px;
+}
+#semester_page {
+  margin: 0 auto;
 }
 
 a {
@@ -36,6 +36,7 @@ footer {
   box-sizing: border-box;
   text-align: center;
 }
+
 header h1 {
   padding: 10px;
 }
@@ -66,8 +67,16 @@ label {
 }
 
 #search_btn {
-  background-color: black;
+  border: solid 1px #757fc9;
   border-radius: 10px;
+}
+
+#search_btn:hover {
+  background-color: white;
+  cursor: pointer;
+}
+
+.breadcrumb a {
   color: white;
   font-size: 15px;
 }
@@ -79,6 +88,15 @@ label {
   text-align: center;
   margin-bottom: 150px;
   margin-right: 200px;
+  width: max-content;
+#index_page {
+  margin: 0 auto;
+}
+.search_div {
+  /* margin-top: 50px; */
+  text-align: center;
+  margin-bottom: 150px;
+ 
   width: max-content;
 }
 .searchbar {
@@ -112,7 +130,7 @@ nav ul {
 }
 
 nav ul li {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   width: 100%;
   text-align: center;
 }
@@ -121,6 +139,9 @@ nav h2 {
 }
 a {
   display: block;
+nav a {
+  color: black;
+  display: block;
 }
 nav ul li:hover {
   background-color: white;
@@ -128,15 +149,29 @@ nav ul li:hover {
 
 main {
   flex: 1;
-  padding: 20px;
   box-sizing: border-box;
+}
+}
+
+#semester_page .main-content {
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#semester_page .main-content h2 {
+  text-align: center;
 }
 
 .semesters {
   display: flex;
   flex-wrap: wrap;
+  padding-left: 40px;
 }
+
 .semesterBox {
+  background-color: white;
   border: solid 1px gray;
   border-radius: 20px;
   margin: 10px;
@@ -181,6 +216,8 @@ ul {
 header {
   min-height: 50px;
   background-color: skyblue;
+#index_page header {
+  min-height: 50px;
 }
 
 .main-container {
@@ -199,8 +236,28 @@ aside {
   display: flex;
   justify-content: center;
   align-items: center;
+#index_page .main-content {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+#semester_page .main-content {
+  justify-content: center;
+  align-items: center;
+}
+
 footer {
   min-height: 50px;
   background-color: skyblue;
+  min-height: 50px;
+}
+.semesterBox p {
+  display: block;
+  border-bottom: 1px gray solid;
+  font-weight: bold;
+  font-size: 1.2em;
+  padding: 0 5px;
+  margin-bottom: 10px;
 }

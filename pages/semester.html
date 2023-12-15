@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Semester</title>
     <link rel="stylesheet" href="../styles/styles.css" />
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link
       href="https://fonts.googleapis.com/css?family=Poppins"
       rel="stylesheet"
@@ -16,31 +17,36 @@
   </head>
   <body id="semester_page">
     <header style="display: flex">
-      <div>Home > program</div>
+      <div class="breadcrumb">
+        <a href="/index.html">Home</a> > <a href="/pages/semester.html">program</a>
+      </div>
       <form style="display: flex">
         <p>
-          <label for="search">Program</label>
-          <input id="search" name="search" type="text" />
+          <label for="top_search">Program</label>
+          <input id="top_search" name="search" type="text" />
         </p>
         <p class="search">
           <input type="button" value="Search" id="search_btn" />
         </p>
       </form>
     </header>
-    <div style="display: flex">
-      <nav class="nav">
-        <i class="fa fa-bars" aria-hidden="true"></i>
-        <h2>Programs</h2>
-        <ul>
-          <li><a href="./pages/semester.html">Software Devlopment</a></li>
-          <li><a href="#">asdfasdf</a></li>
-          <li>aaaaaaaaaaa</li>
-          <li>aaaaaaaaaaa</li>
-          <li>aaaaaaaaaaa</li>
-          <li>aaaaaaaaaaa</li>
-        </ul>
-      </nav>
-      <main>
+
+    <main class="main-container">
+      <aside>
+        <nav class="nav">
+          <h2>Programs</h2>
+          <ul>
+            <li><a href="./pages/semester.html">Software Devlopment</a></li>
+            <li><a href="#">asdfasdf</a></li>
+            <li><a href="#">aaaaaaaaaaa</a></li>
+            <li><a href="#">aaaaaaaaaaa</a></li>
+            <li><a href="#">aaaaaaaaaaa</a></li>
+            <li><a href="#">aaaaaaaaaaa</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+      <div class="main-content">
         <h2>Semesters</h2>
         <div class="semesters"></div>
       </main>
