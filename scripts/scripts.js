@@ -136,7 +136,13 @@ function parseProgram() {
 function loadCoursePage() {
   let url = new URLSearchParams(window.location.search);
   let courseCode = url.get('code');
+  // needs to wait until after window has loaded
   console.log(courseCode);
+  if (courseCode == 'CPRG213') {
+    test = document.createElement('p');
+    test.textContent = 'hello world';
+    nav.append(test);
+  }
 }
 
 function populateBox() {
