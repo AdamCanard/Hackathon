@@ -42,15 +42,13 @@ function search() {
   // Takes user input, calls database API for each character entered after 1 second of no typing (for server efficiency)
   // Search bar appears on every page. Search function will be called by eventlistener listening for characters entered in input
   // displays search results as list of links popped up below the search bar
-
+  while (searchOutput.firstChild) {
+    searchOutput.removeChild(searchOutput.firstChild);
+  }
+  
   for (let i = 0; i < testPrograms.length; i++) {
     if (testPrograms[i].includes(searchBar.value)) {
-      for (let j = 0; i < searchOutput.length; j++) {
-        // this part currently does not work. I wish it did.
-        if (!searchOutput[i].includes(searchBar.value)) {
-          searchOutput[i].parentNode.removeChild(searchOutput[i]);
-        }
-      }
+
       newElem = document.createElement('p');
       newElem.textContent = testPrograms[i];
       searchOutput.append(newElem);
