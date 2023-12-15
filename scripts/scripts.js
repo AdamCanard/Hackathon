@@ -1,10 +1,10 @@
 const searchBar = document.querySelector(".searchbar");
 const searchSubmit = document.querySelector(".input-submit");
 const semesterBox = document.querySelector(".semesterBox");
-const api = null // root link for API calls
-const breadcrumb = document.querySelector(".breadcrumb")
+const api = null; // root link for API calls
+const breadcrumb = document.querySelector(".breadcrumb");
 const nav = document.getElementById("n");
-const searchOutput = document.querySelector(".search-output")
+const searchOutput = document.querySelector(".search-output");
 
 // contains all extracted courses from every program
 let extractedCourses = [];
@@ -35,7 +35,6 @@ searchBar.addEventListener("input", search);
 //});
 //console.log(temp)
 
-
 fetchProgramJson();
 
 function search() {
@@ -48,9 +47,13 @@ function search() {
   }
 
   for (let i = 0; i < extractedCourses.length; i++) {
-    if (extractedCourses[i].toLowerCase().includes(searchBar.value) && searchBar.value) {
-      newElem = document.createElement('a');
-      newElem.href = "/pages/course.html?code=" + encodeURIComponent(extractedCourses[i]);
+    if (
+      extractedCourses[i].toLowerCase().includes(searchBar.value) &&
+      searchBar.value
+    ) {
+      newElem = document.createElement("a");
+      newElem.href =
+        "/pages/course.html?code=" + encodeURIComponent(extractedCourses[i]);
       newElem.classList.add("course-anchor");
       newElem.onclick = loadCoursePage;
       newElem.textContent = extractedCourses[i];
@@ -88,9 +91,9 @@ function assignProgramData(data) {
 
 function fetchProgramJson() {
   fetch("./scripts/software_development.json")
-  //fetch("http://server.jgaribsin.com:3000/courses/find", {
-  //method:'GET',
-  //credentials:'same-origin'})
+    //fetch("http://server.jgaribsin.com:3000/courses/find", {
+    //method:'GET',
+    //credentials:'same-origin'})
     .then((res) => {
       return res.json();
     })
@@ -129,18 +132,16 @@ function updateBreadCrumb() {
   // Updates breadcrumb div with proper information
 }
 
-function parseProgram() {
-    
-}
+function parseProgram() {}
 
 function loadCoursePage() {
   let url = new URLSearchParams(window.location.search);
-  let courseCode = url.get('code');
+  let courseCode = url.get("code");
   // needs to wait until after window has loaded
   console.log(courseCode);
-  if (courseCode == 'CPRG213') {
-    test = document.createElement('p');
-    test.textContent = 'hello world';
+  if (courseCode == "CPRG213") {
+    test = document.createElement("p");
+    test.textContent = "hello world";
     nav.append(test);
   }
 }
