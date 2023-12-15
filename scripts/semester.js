@@ -15,7 +15,6 @@ populateSemBoxes();
 fetchProgramJson();
 
 function search() {
-  searchOutput.innerHTML = 'hiiii';
   //console.log(extractedCourses);
   // Takes user input, searches through course list parsed through json for each character entered
   // Search bar appears on every page. Search function will be called by eventlistener listening for characters entered in input
@@ -123,5 +122,6 @@ function populateSemBoxes() {
 function updateBreadCrumb(semesterName) {
   // Page name, program name, and semester number are stored in variables
   // Updates breadcrumb div with proper information
+  // need to update this to dynamically show program instead of hardcoding
   breadCrumb.textContent = `Home > Software Development > Semester ${semesterName}`;
 }
